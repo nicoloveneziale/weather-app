@@ -1,0 +1,22 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Use of the visual crossing api and use of new skills learnt in async and await functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicoloveneziale/weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicoloveneziale/weather-app/issues"
+  },
+  "homepage": "https://github.com/nicoloveneziale/weather-app#readme",
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}
