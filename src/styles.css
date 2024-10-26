@@ -36,6 +36,7 @@ body img {
   background-color: #171718;
   padding: 2vh;
   border-radius: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.7);
 }
 
 #search-div input {
@@ -62,6 +63,7 @@ body img {
   background-color: #171718;
   width: 40vw;
   height: 50vh;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.7);
 }
 
 .data-div {
@@ -72,4 +74,16 @@ body img {
   width: 100%;
   padding-left: 1vw;
   border-left: #707070 2px solid;
+}
+
+#days-div {
+  display: flex;
+  flex-direction: row;
+  background-color: #131314;
+  padding: 1vw 2vh;
+  border-radius: 1rem;
+  width: 70vw;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.7);
 }

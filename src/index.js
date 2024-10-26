@@ -93,10 +93,36 @@ function renderDOM(location, days, currentConditions) {
     createInfoDiv("sunset"),
   );
 
+  const daysContainer = document.createElement("div");
+  daysContainer.id = "days-div";
+
+  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  for (var i = 1; i < 9; i++) {
+    var day = days[i];
+    var date = new Date(day.datetime);
+
+    var dayDiv = document.createElement("div");
+    dayDiv.classList.add("day");
+
+    var weekday = document.createElement("p");
+    weekday.innerHTML = dayNames[date.getDay()];
+    weekday.classList.add("weekday");
+
+    var low = document.createElement("p");
+    low.innerHTML = day.tempmin + "°C";
+
+    var high = document.createElement("p");
+    high.innerHTML = day.tempmax + "°C";
+
+    dayDiv.append(weekday, low, high);
+    daysContainer.appendChild(dayDiv);
+  }
+
   const background = document.createElement("img");
   background.src = backgroundImage;
 
-  body.append(background, searchDiv, contentContainer);
+  body.append(background, searchDiv, contentContainer, daysContainer);
 }
 
 processData("Liverpool");
