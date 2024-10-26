@@ -1,5 +1,9 @@
 import "./styles.css";
-import backgroundImage from "./images/noaa-99F4mC79j1I-unsplash.jpg";
+import partlyCloudy from "./images/clouds-sky.gif";
+import cloudy from "./images/cloudy.gif";
+import clear from "./images/clear.gif";
+import overcast from "./images/overcast.gif";
+import rain from "./images/rain.gif";
 
 async function getWeatherData(location) {
   try {
@@ -98,6 +102,16 @@ function renderDOM(location, days, currentConditions) {
 
   const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  const lowHighDiv = document.createElement("div");
+  const lowText = document.createElement("p");
+  lowText.innerHTML = "Low";
+  const highText = document.createElement("p");
+  highText.innerHTML = "High";
+  lowHighDiv.append(lowText, highText);
+  lowHighDiv.id = "lowhigh";
+
+  daysContainer.appendChild(lowHighDiv);
+
   for (var i = 1; i < 9; i++) {
     var day = days[i];
     var date = new Date(day.datetime);
@@ -120,7 +134,22 @@ function renderDOM(location, days, currentConditions) {
   }
 
   const background = document.createElement("img");
-  background.src = backgroundImage;
+  background.id = "background";
+
+  if (
+    currentConditions.icon == "partly-cloudy-day" ||
+    currentConditions.icon == "partly-cloudy-night"
+  ) {
+    background.src = partlyCloudy;
+  } else if (currentConditions.icon == "cloudy") {
+    background.src = cloudy;
+  } else if (currentConditions.icon == "rain") {
+    background.src = rain;
+  } else if (currentConditions.icon == "overcast") {
+    background.src = overcast;
+  } else if (currentConditions.icon == "clear") {
+    background.src = clear;
+  }
 
   body.append(background, searchDiv, contentContainer, daysContainer);
 }

@@ -25,7 +25,7 @@ body {
   overflow: hidden;
 }
 
-body img {
+#background {
   position: absolute;
   z-index: -1;
   height: 100vh;
@@ -86,4 +86,8 @@ body img {
   align-items: center;
   justify-content: space-around;
   box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.7);
+}
+
+#lowhigh {
+  margin-top: 5vh;
 }
